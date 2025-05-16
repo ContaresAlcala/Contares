@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contares. Asociación artesano-cultural</title>
+  <title>Nosotros - Contares</title>
   <style>
 body {
   font-family: Arial, sans-serif;
@@ -47,70 +47,24 @@ body {
       margin: 0;
     }
 
-    /* Botón INSCRIPCIÓN */
-    .inscripcion-button {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      padding: 10px 20px;
-      background-color: #28a745;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      font-size: 1em;
-      transition: background-color 0.3s ease;
-      z-index: 2;
+    p.intro-text, ul.intro-text {
+      font-size: 1.2em;
+      margin: 20px;
+      line-height: 1.6;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #333;
+      text-align: left;
     }
 
-    .inscripcion-button:hover {
-      background-color: #218838;
+    nav {
+      margin: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
     }
-
-    /* Botón NOSOTROS */
-    .nosotros-button {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      padding: 10px 20px;
-      background-color: #007bff;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      font-size: 1em;
-      transition: background-color 0.3s ease;
-      z-index: 2;
-    }
-
-    .nosotros-button:hover {
-      background-color: #0056b3;
-    }
-
-   p.intro-text {
-  font-size: 1.2em;
-  margin: 20px;
-  line-height: 1.6;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333;
-  background-color: rgba(255, 255, 255, 0.85); /* Fondo blanco semitransparente */
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Suaviza el contorno */
-}
-
-nav {
-  margin: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  background-color: rgba(255, 255, 255, 0.85); /* Fondo blanco semitransparente */
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
 
     .nav-button {
       padding: 12px 20px;
@@ -122,10 +76,44 @@ nav {
       text-align: center;
       font-size: 1em;
       transition: background-color 0.3s ease;
+      cursor: pointer;
     }
 
     .nav-button:hover {
       background-color: #777;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 10;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-content {
+      background-color: white;
+      padding: 20px;
+      margin: 30% auto;
+      width: 90%;
+      max-width: 400px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .close-btn {
+      background-color: #c0392b;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .close-btn:hover {
+      background-color: #a93226;
     }
 
     @media (max-width: 600px) {
@@ -144,19 +132,8 @@ nav {
         font-size: 1em;
       }
 
-      .inscripcion-button,
-      .nosotros-button {
-        font-size: 0.9em;
-        padding: 8px 16px;
-        top: 10px;
-      }
-
-      .inscripcion-button {
-        right: 10px;
-      }
-
-      .nosotros-button {
-        left: 10px;
+      .modal-content {
+        margin: 50% auto;
       }
     }
   </style>
@@ -164,23 +141,76 @@ nav {
 <body>
 
   <header>
-    <h1>Contares. Asociación artesano-cultural</h1>
-    <a href="pagina7.html" class="nosotros-button">Nosotros</a>
-    <a href="https://forms.gle/ahmuPFqgFGya31Ru5" class="inscripcion-button" target="_blank">Inscripción</a>
+    <h1>Nosotros</h1>
   </header>
 
   <p class="intro-text">
-    Contares es una asociación que promueve el arte y la cultura. Tiene varias secciones gestionadas por grupos de coordinación, donde los miembros participan activamente en distintas áreas de expresión artística. Cada sección ofrece actividades y eventos para fomentar el intercambio cultural y el aprendizaje mutuo.
+    <strong>Contares</strong> es una asociación sin ánimo de lucro que desarrolla su labor en <strong>Alcalá de los Gazules</strong>. Nace con el objetivo de fomentar la comunicación y el desarrollo cultural a partir del mundo artesanal, entendido como el espacio en el que personas que no se consideran artistas, pero que desarrollan actividades creativas, encuentran una forma de expresión.
+  </p>
+
+  <p class="intro-text">
+    Esta visión de lo artesanal abarca todos los ámbitos culturales: la música, el teatro, la pintura, la escultura, la literatura, el cine, la radio… En todos ellos, lo importante no es la profesionalización artística, sino el impulso creativo y la voluntad de compartirlo con los demás.
+  </p>
+
+  <p class="intro-text">
+    Trabajamos a través de <strong>comisiones de trabajo</strong> coordinadas por distintos artesanos vinculados a la localidad. Estas comisiones se coordinan entre sí para organizar eventos donde la <strong>artesanía total</strong> —la integración de múltiples disciplinas— o la <strong>simbiosis artesanal</strong> —la colaboración entre distintas expresiones— sea la premisa fundamental. Además, estamos abiertos a nuevas formas de artesanía y a colaboraciones con colectivos diversos.
+  </p>
+
+  <p class="intro-text">
+    Actualmente, el equipo directivo de la asociación está formado por:
+  </p>
+  <ul class="intro-text">
+    <li><strong>Aureliano Ferrero</strong>, presidente.</li>
+    <li><strong>Rosalía I. Gutiérrez</strong>, secretaria.</li>
+    <li><strong>Maribel Trujillo</strong>, tesorera.</li>
+  </ul>
+
+  <p class="intro-text">
+    Los distintos grupos de trabajo están coordinados por:
+  </p>
+  <ul class="intro-text">
+    <li><strong>Aureliano Ferrero</strong>, en Música y Espectáculo.</li>
+    <li><strong>María Morales</strong>, en la sección de Teatro.</li>
+    <li><strong>María Mesa</strong>, en Artes Plásticas.</li>
+    <li><strong>Rosa Cabeza</strong>, en Cerámica.</li>
+    <li><strong>Rosalía I. Gutiérrez</strong>, en Literatura.</li>
+    <li><strong>Ramón Martín</strong>, en Logística y Decoración.</li>
+  </ul>
+
+  <p class="intro-text">
+    Contares es un espacio abierto y vivo, donde cualquier persona con inquietudes creativas puede encontrar su lugar. Te invitamos a participar, proponer y construir juntos nuevas formas de expresión cultural desde lo artesanal y lo colectivo.
   </p>
 
   <nav>
-    <a href="pagina1.html" class="nav-button">Música - Espectáculo</a>
-    <a href="pagina2.html" class="nav-button">Teatro</a>
-    <a href="pagina3.html" class="nav-button">Artes Plásticas</a>
-    <a href="pagina4.html" class="nav-button">Cerámica</a>
-    <a href="pagina5.html" class="nav-button">Literatura</a>
-    <a href="pagina6.html" class="nav-button">Logística y Decoración</a>
+    <a href="index.html" class="nav-button">Volver al inicio</a>
+    <button class="nav-button" onclick="abrirModal()">Contacto</button>
   </nav>
+
+  <!-- Ventana Modal -->
+  <div id="modalContacto" class="modal">
+    <div class="modal-content">
+      <p>📧 Puedes contactar escribiendo a:</p>
+      <p><strong>contaresalcala@gmail.com</strong></p>
+      <button class="close-btn" onclick="cerrarModal()">Cerrar</button>
+    </div>
+  </div>
+
+  <script>
+    function abrirModal() {
+      document.getElementById("modalContacto").style.display = "block";
+    }
+
+    function cerrarModal() {
+      document.getElementById("modalContacto").style.display = "none";
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById("modalContacto");
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    };
+  </script>
 
 </body>
 </html>
