@@ -43,6 +43,44 @@
       margin: 0;
     }
 
+    /* Botón INSCRIPCIÓN */
+    .inscripcion-button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      background-color: #28a745;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 1em;
+      transition: background-color 0.3s ease;
+      z-index: 2;
+    }
+
+    .inscripcion-button:hover {
+      background-color: #218838;
+    }
+
+    /* Botón NOSOTROS */
+    .nosotros-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 1em;
+      transition: background-color 0.3s ease;
+      z-index: 2;
+    }
+
+    .nosotros-button:hover {
+      background-color: #0056b3;
+    }
+
     p.intro-text {
       font-size: 1.2em;
       margin: 20px;
@@ -77,25 +115,6 @@
       background-color: #777;
     }
 
-    /* Estilo para el botón de inscripción en la esquina */
-    .inscripcion-button {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      padding: 10px 20px;
-      background-color: #28a745;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      font-size: 1em;
-      transition: background-color 0.3s ease;
-      z-index: 2;
-    }
-
-    .inscripcion-button:hover {
-      background-color: #218838;
-    }
-
     @media (max-width: 600px) {
       header {
         height: 150px;
@@ -112,11 +131,19 @@
         font-size: 1em;
       }
 
-      .inscripcion-button {
-        top: 10px;
-        right: 10px;
+      .inscripcion-button,
+      .nosotros-button {
         font-size: 0.9em;
         padding: 8px 16px;
+        top: 10px;
+      }
+
+      .inscripcion-button {
+        right: 10px;
+      }
+
+      .nosotros-button {
+        left: 10px;
       }
     }
   </style>
@@ -125,6 +152,7 @@
 
   <header>
     <h1>Contares. Asociación artesano-cultural</h1>
+    <a href="pagina7.html" class="nosotros-button">Nosotros</a>
     <a href="https://forms.gle/ahmuPFqgFGya31Ru5" class="inscripcion-button" target="_blank">Inscripción</a>
   </header>
 
@@ -143,3 +171,4 @@
 
 </body>
 </html>
+
