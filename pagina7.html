@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nosotros - Contares</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      text-align: center;
+    }
+
+    header {
+      background-image: url('ContaresLogo.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-color: #000;
+      color: white;
+      padding: 20px;
+      position: relative;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+
+    header h1 {
+      position: relative;
+      z-index: 1;
+      font-size: 2em;
+      margin: 0;
+    }
+
+    p.intro-text, ul.intro-text {
+      font-size: 1.2em;
+      margin: 20px;
+      line-height: 1.6;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #333;
+      text-align: left;
+    }
+
+    nav {
+      margin: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .nav-button {
+      padding: 12px 20px;
+      background-color: #555;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      min-width: 200px;
+      text-align: center;
+      font-size: 1em;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+    }
+
+    .nav-button:hover {
+      background-color: #777;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 10;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-content {
+      background-color: white;
+      padding: 20px;
+      margin: 30% auto;
+      width: 90%;
+      max-width: 400px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .close-btn {
+      background-color: #c0392b;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .close-btn:hover {
+      background-color: #a93226;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        height: 150px;
+        padding: 10px;
+      }
+
+      header h1 {
+        font-size: 1.2em;
+      }
+
+      .nav-button {
+        width: 90%;
+        min-width: unset;
+        font-size: 1em;
+      }
+
+      .modal-content {
+        margin: 50% auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Nosotros</h1>
+  </header>
+
+  <p class="intro-text">
+    <strong>Contares</strong> es una asociación sin ánimo de lucro que desarrolla su labor en <strong>Alcalá de los Gazules</strong>. Nace con el objetivo de fomentar la comunicación y el desarrollo cultural a partir del mundo artesanal, entendido como el espacio en el que personas que no se consideran artistas, pero que desarrollan actividades creativas, encuentran una forma de expresión.
+  </p>
+
+  <p class="intro-text">
+    Esta visión de lo artesanal abarca todos los ámbitos culturales: la música, el teatro, la pintura, la escultura, la literatura, el cine, la radio… En todos ellos, lo importante no es la profesionalización artística, sino el impulso creativo y la voluntad de compartirlo con los demás.
+  </p>
+
+  <p class="intro-text">
+    Trabajamos a través de <strong>comisiones de trabajo</strong> coordinadas por distintos artesanos vinculados a la localidad. Estas comisiones se coordinan entre sí para organizar eventos donde la <strong>artesanía total</strong> —la integración de múltiples disciplinas— o la <strong>simbiosis artesanal</strong> —la colaboración entre distintas expresiones— sea la premisa fundamental. Además, estamos abiertos a nuevas formas de artesanía y a colaboraciones con colectivos diversos.
+  </p>
+
+  <p class="intro-text">
+    Actualmente, el equipo directivo de la asociación está formado por:
+  </p>
+  <ul class="intro-text">
+    <li><strong>Aureliano Ferrero</strong>, presidente.</li>
+    <li><strong>Rosalía I. Gutiérrez</strong>, secretaria.</li>
+    <li><strong>Maribel Trujillo</strong>, tesorera.</li>
+  </ul>
+
+  <p class="intro-text">
+    Los distintos grupos de trabajo están coordinados por:
+  </p>
+  <ul class="intro-text">
+    <li><strong>Aureliano Ferrero</strong>, en Música y Espectáculo.</li>
+    <li><strong>María Morales</strong>, en la sección de Teatro.</li>
+    <li><strong>María Mesa</strong>, en Artes Plásticas.</li>
+    <li><strong>Rosa Cabeza</strong>, en Cerámica.</li>
+    <li><strong>Rosalía I. Gutiérrez</strong>, en Literatura.</li>
+    <li><strong>Ramón Martín</strong>, en Logística y Decoración.</li>
+  </ul>
+
+  <p class="intro-text">
+    Contares es un espacio abierto y vivo, donde cualquier persona con inquietudes creativas puede encontrar su lugar. Te invitamos a participar, proponer y construir juntos nuevas formas de expresión cultural desde lo artesanal y lo colectivo.
+  </p>
+
+  <nav>
+    <a href="index.html" class="nav-button">Volver al inicio</a>
+    <button class="nav-button" onclick="abrirModal()">Contacto</button>
+  </nav>
+
+  <!-- Ventana Modal -->
+  <div id="modalContacto" class="modal">
+    <div class="modal-content">
+      <p>📧 Puedes contactar escribiendo a:</p>
+      <p><strong>contaresalcala@gmail.com</strong></p>
+      <button class="close-btn" onclick="cerrarModal()">Cerrar</button>
+    </div>
+  </div>
+
+  <script>
+    function abrirModal() {
+      document.getElementById("modalContacto").style.display = "block";
+    }
+
+    function cerrarModal() {
+      document.getElementById("modalContacto").style.display = "none";
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById("modalContacto");
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    };
+  </script>
+
+</body>
+</html>
