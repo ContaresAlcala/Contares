@@ -47,21 +47,23 @@ header h1 {
   margin: 0;
 }
 
-/* Botón Instagram */
-.instagram-btn {
+/* Botones redes sociales */
+.social-buttons {
   position: absolute;
   top: 15px;
   right: 15px;
+  display: flex;
+  gap: 10px;
   z-index: 2;
 }
 
-.instagram-btn img {
+.social-btn img {
   width: 40px;
   height: 40px;
   transition: transform 0.3s ease;
 }
 
-.instagram-btn img:hover {
+.social-btn img:hover {
   transform: scale(1.1);
 }
 
@@ -160,10 +162,15 @@ nav {
 
   <header>
     <h1>Nosotros</h1>
-    <!-- Botón Instagram -->
-    <a href="https://www.instagram.com/contaresalcala/" target="_blank" class="instagram-btn">
-      <img src="instagram.png" alt="Instagram">
-    </a>
+    <!-- Botones redes sociales -->
+    <div class="social-buttons">
+      <a href="https://www.instagram.com/contaresalcala/" target="_blank" class="social-btn">
+        <img src="instagram.png" alt="Instagram">
+      </a>
+      <a href="https://www.facebook.com/share/1GWiiMnGy6/" target="_blank" class="social-btn">
+        <img src="facebook.png" alt="Facebook">
+      </a>
+    </div>
   </header>
 
   <p class="intro-text">
@@ -243,6 +250,3 @@ nav {
 
 </body>
 </html>
-
-
-
